@@ -1,15 +1,14 @@
 # Random Numbers DRBG Benchmark
 
-This project benchmarks three deterministic random bit generators (DRBGs) implemented in Rust:
+Benchmarks three deterministic random bit generators (DRBGs) implemented in Rust:
 - ChaCha20-based DRBG (`rand_chacha`)
 - AES-256-CTR DRBG with BLAKE3-derived key/counter
 - BLAKE3 XOF DRBG
 
-The harness produces packed bit strings for lengths 10^4, 10^5, 10^6, and 10^7 bits, runs each configuration 50 times, and records timing, space, and bit-balance metrics. Plotters renders summary figures, and the LaTeX report in `report_final.tex`/`report_final.pdf` documents the methodology and results.
+The harness produces packed bit strings for lengths 10^4, 10^5, 10^6, and 10^7 bits, runs each configuration 50 times, and records timing, space, and bit-balance metrics. Plotters renders summary figures, and `report_final.pdf` documents the methodology and results.
 
 ## Prerequisites
 - Rust toolchain (stable) with `cargo`
-- LaTeX distribution (for rebuilding the report)
 
 ## Run the benchmark
 ```sh
@@ -20,14 +19,6 @@ Outputs:
 - `results/summary.csv`: mean and sample standard deviation per configuration
 - `results/plots/{time_ms,memory_bytes,ones_ratio}.png`: plots derived from summary data
 
-## Regenerate the report
-1. Ensure plots exist by running the benchmark (see above).
-2. Build the PDF:
-   ```sh
-   pdflatex report_final.tex
-   ```
-3. The rendered report is `report_final.pdf`.
-
 ## Notes
 - `.gitignore` excludes LaTeX intermediates and build artifacts while keeping PDFs and source files.
-- Adjust `RUNS` or `TARGET_LENGTHS` in `src/main.rs` to explore different repetition counts or output sizes. Re-run the benchmark and rebuild the report to refresh the artifacts.
+- Adjust `RUNS` or `TARGET_LENGTHS` in `src/main.rs` to explore different repetition counts or output sizes. Re-run the benchmark to refresh metrics and plots.
