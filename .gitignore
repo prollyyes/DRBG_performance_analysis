@@ -1,7 +1,7 @@
 # Rust build output
 /target
 
-# LaTeX intermediates (keep PDFs)
+# LaTeX compilation artifacts (keep PDFs)
 *.aux
 *.log
 *.out
@@ -13,7 +13,28 @@
 *.synctex.gz
 *.bbl
 *.blg
+*.bcf
 *.run.xml
+*.nav
+*.snm
+*.vrb
+*.dvi
+*.ps
+*.xdv
+*.idx
+*.ilg
+*.ind
+*.thm
+*.glg
+*.glo
+*.gls
+*.ist
+*.acn
+*.acr
+*.alg
+*.loa
+*.xmpdata
+*.xmpi
 
 # Editor backups
 *.bak
