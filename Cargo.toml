@@ -1,0 +1,12 @@
+[package]
+name = "random_numbers"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rand_chacha = "0.3"
+rand_core = "0.6"
+aes = "0.8"
+ctr = "0.9"
+blake3 = "1.5"
+plotters = { version = "0.3.6", features = ["bitmap_encoder", "bitmap_backend", "ttf"] }
